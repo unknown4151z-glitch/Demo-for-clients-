@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Package, Smartphone, Laptop, Zap, Users, PenTool, Bike, Car, Shirt, ShoppingBasket } from 'lucide-react';
+import { Package, Smartphone, Laptop, Zap, Users, PenTool, Bike, Car, Shirt, ShoppingBasket, Dumbbell } from 'lucide-react';
 
 const services = [
   { icon: Shirt, title: 'Clothes', desc: 'Fashion Showroom', keywords: 'Fashion, Apparels', img: 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=2070&auto=format&fit=crop' },
@@ -12,6 +12,7 @@ const services = [
   { icon: PenTool, title: 'Brand/Web Agency', desc: 'Premium Digital Studio', keywords: 'Design, Marketing', img: 'https://images.unsplash.com/photo-1542744095-291d1f67b221?q=80&w=2070&auto=format&fit=crop' },
   { icon: Bike, title: 'Cycle Showroom', desc: 'Mountain & Road Bikes', keywords: 'Fitness, Bikes', img: 'https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=2070&auto=format&fit=crop' },
   { icon: Car, title: 'Car Showroom', desc: 'Luxury Automobiles', keywords: 'Cars, Auto', img: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=2070&auto=format&fit=crop' },
+  { icon: Dumbbell, title: 'Gym Equipment', desc: 'Premium Fitness Gear', keywords: 'Fitness, Gym', img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop' },
 ];
 
 export function Services() {

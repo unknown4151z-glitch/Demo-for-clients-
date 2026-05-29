@@ -1,0 +1,87 @@
+import { motion } from 'motion/react';
+import { Dumbbell, Target, Users, Calculator, Package, Check, ChevronRight } from 'lucide-react';
+import { useState } from 'react';
+
+const catalog = [
+  { id: 1, title: 'Pro Treadmill', category: 'Cardio', img: 'https://images.unsplash.com/photo-1540497077202-7c8a39943222?q=80&w=600&auto=format&fit=crop' },
+  { id: 2, title: 'Power Rack', category: 'Strength', img: 'https://images.unsplash.com/photo-1594882645126-14020914d58d?q=80&w=600&auto=format&fit=crop' },
+  { id: 3, title: 'Dumbbell Set', category: 'Free Weights', img: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=600&auto=format&fit=crop' },
+  { id: 4, title: 'Elastic Band Kit', category: 'Accessories', img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop' },
+];
+
+const pricing = [
+  { name: 'Startup', price: '₹4,999', features: ['Core sets', 'Basic setup', '1 Year Warranty'] },
+  { name: 'Premium Club', price: '₹14,999', features: ['Full cardio', 'Strength gear', '3 Year Warranty', 'Setup Assistance'] },
+  { name: 'Elite Commercial', price: '₹49,999', features: ['Full Gym Setup', 'Commercial grade gear', '5 Year Warranty', '24/7 Support', 'Custom Layout'] },
+];
+
+export function GymSection() {
+  const [bmi, setBmi] = useState<number | null>(null);
+
+  return (
+    <section id="gym" className="py-24 bg-zinc-50 border-t border-[var(--color-brand-line)]">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="section-label mb-8">Gym & Fitness Solutions</div>
+        <h2 className="text-4xl md:text-5xl font-sans font-black mb-16 text-[var(--color-brand-fg)] uppercase tracking-tight">Premium Fitness Solutions</h2>
+        
+        {/* Catalog */}
+        <div className="mb-24">
+            <h3 className="text-2xl font-sans font-bold mb-8">Equipment Catalog</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                {catalog.map(item => (
+                    <motion.div key={item.id} whileHover={{ y: -5 }} className="bg-white border p-4 group">
+                        <img src={item.img} alt={item.title} className="w-full h-40 object-cover mb-4" />
+                        <h4 className="font-bold">{item.title}</h4>
+                        <p className="text-xs text-zinc-500 mb-4">{item.category}</p>
+                        <button className="text-xs font-mono uppercase bg-black text-white px-4 py-2 hover:bg-[var(--color-brand-accent)] w-full">Request Quote</button>
+                    </motion.div>
+                ))}
+            </div>
+        </div>
+
+        {/* Setup & Pricing */}
+        <div className="grid md:grid-cols-2 gap-16 mb-24">
+            <div className="bg-black text-white p-12">
+                <Target className="mb-6 w-10 h-10 text-[var(--color-brand-accent)]" />
+                <h3 className="text-3xl font-black mb-6">Corporate Gym Setups</h3>
+                <p className="text-zinc-400 mb-8">We turn empty rooms into high-performance gyms. From layout design to final equipment installation, we handle everything.</p>
+                <div className="space-y-4">
+                    {['Site Assessment', 'Custom Layout Planning', 'Expert Installation', 'Maintenance'].map(step => (
+                        <div key={step} className="flex items-center gap-3"><Check className="w-4 h-4 text-[var(--color-brand-accent)]" /> {step}</div>
+                    ))}
+                </div>
+            </div>
+            <div>
+                <h3 className="text-2xl font-sans font-bold mb-8">Pricing Packages</h3>
+                <div className="grid gap-6">
+                    {pricing.map(plan => (
+                        <div key={plan.name} className="flex justify-between items-center bg-white p-6 border group hover:border-[var(--color-brand-accent)] transition-colors">
+                            <div>
+                                <h4 className="font-bold text-lg">{plan.name}</h4>
+                                <p className="text-xs text-zinc-500">{plan.features.slice(0,2).join(', ')}</p>
+                            </div>
+                            <div className="text-right">
+                                <p className="text-xl font-black">{plan.price}</p>
+                                <ChevronRight className="inline w-5 h-5 text-[var(--color-brand-accent)]" />
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+
+        {/* BMI Calculator */}
+        <div className="bg-white border p-12 text-center">
+            <Calculator className="w-10 h-10 mx-auto mb-6" />
+            <h3 className="text-2xl font-bold mb-8">Fitness Planner (BMI)</h3>
+            <div className="flex gap-4 justify-center">
+                <input type="number" placeholder="Height (cm)" className="border p-4 w-40" />
+                <input type="number" placeholder="Weight (kg)" className="border p-4 w-40" />
+                <button onClick={() => setBmi(22.5)} className="bg-[var(--color-brand-accent)] text-white px-8">Calculate</button>
+            </div>
+            {bmi && <p className="mt-8 font-black text-2xl">Your estimated BMI: {bmi}</p>}
+        </div>
+      </div>
+    </section>
+  );
+}

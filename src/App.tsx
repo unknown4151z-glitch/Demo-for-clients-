@@ -9,6 +9,7 @@ import { Hero } from './components/Hero';
 import { Services } from './components/Services';
 import { WhyUs } from './components/WhyUs';
 import { Contact } from './components/Contact';
+import { GymSection } from './components/GymSection';
 import { FloatingSocial } from './components/FloatingSocial';
 
 function CustomCursor() {
@@ -72,6 +73,7 @@ export default function App() {
         <WhyUs />
         <Services />
         
+        
         {/* Placeholder for Portfolio / Social Proof sections that could be expanded further */}
         <section id="portfolio" className="py-24 bg-white border-t border-[var(--color-brand-line)]">
           <div className="max-w-7xl mx-auto px-6 text-center">
@@ -94,6 +96,8 @@ export default function App() {
              </div>
           </div>
         </section>
+
+        <GymSection />
 
         <Contact />
       </main>
