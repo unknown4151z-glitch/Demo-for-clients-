@@ -3,27 +3,30 @@ import { Target, Zap, Trophy, MessageCircle } from 'lucide-react';
 
 export function WhyUs() {
   return (
-    <section id="about" className="py-24 relative overflow-hidden bg-[#020617]">
+    <section id="about" className="py-24 relative overflow-hidden bg-white border-b border-[var(--color-brand-line)]">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
         
         {/* Left Content */}
         <div>
+          <div className="section-label mb-8">The Problem</div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-display font-bold mb-6 text-slate-100 leading-tight tracking-tight"
+            className="text-4xl md:text-5xl lg:text-[56px] font-serif font-light mb-6 text-[var(--color-brand-fg)] leading-[1.1]"
           >
-            Why businesses fail at digital marketing?
+            Why businesses fail at <br/><em className="font-sans font-extrabold uppercase text-[var(--color-brand-accent)] tracking-tight">digital</em> marketing?
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-slate-400 mb-8"
+            className="text-lg font-serif text-[var(--color-brand-muted)] mb-12 leading-relaxed"
           >
-            Sahi strategy ke bina budget waste hota hai. At DEMO SITE, we focus on <strong className="text-slate-200">AI-era search visibility</strong> and <strong className="text-slate-200">social-media-driven conversions</strong>.
+            Sahi strategy ke bina budget waste hota hai. At DEMO SITE, we focus on 
+            <strong className="text-[var(--color-brand-fg)] font-semibold font-sans uppercase text-sm mx-2">AI-era search visibility</strong> and 
+            <strong className="text-[var(--color-brand-fg)] font-semibold font-sans uppercase text-sm ml-1">social conversion funnels</strong>. We do not just build, we dominate.
           </motion.p>
           
           <div className="space-y-6">
@@ -39,12 +42,12 @@ export function WhyUs() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 + (i * 0.1) }}
-                className="flex items-center gap-4 bg-slate-900/40 p-4 rounded-xl border border-slate-800"
+                className="flex items-center gap-5 p-4 border border-[var(--color-brand-line)] bg-[var(--color-brand-bg)] hover:bg-white transition-colors"
               >
-                <div className="text-amber-500">
-                  <item.icon size={24} />
+                <div className="text-[var(--color-brand-accent)] bg-white p-3 rounded-none border border-[var(--color-brand-line)] shadow-sm">
+                  <item.icon size={22} strokeWidth={1.5} />
                 </div>
-                <span className="font-semibold text-slate-300">{item.title}</span>
+                <span className="font-sans text-sm font-bold tracking-wide uppercase text-[var(--color-brand-fg)]">{item.title}</span>
               </motion.div>
             ))}
           </div>
@@ -52,30 +55,30 @@ export function WhyUs() {
 
         {/* Right Content / Image Area */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="relative h-[600px] rounded-3xl overflow-hidden border border-slate-800 group bg-slate-900/20"
+          className="relative h-[700px] flex items-center justify-center p-8 bg-[var(--color-brand-bg)] border border-[var(--color-brand-line)] group"
         >
-          <img 
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" 
-            alt="Futuristic data and AI marketing dashboard showcase"
-            className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-700 mix-blend-luminosity" 
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/50 to-transparent" />
+           <img 
+              src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop" 
+              className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply grayscale transition-transform duration-1000 group-hover:scale-105"
+              alt="Data Analysis"
+           />
+           <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px]"></div>
           
-          <div className="absolute bottom-8 left-8 right-8 bg-slate-950/80 backdrop-blur-xl border border-slate-800 p-6 rounded-2xl">
-            <div className="flex justify-between items-center mb-2">
-              <span className="text-xs font-bold uppercase tracking-widest text-amber-500">Organic Growth Rate</span>
-              <span className="text-sm font-bold text-slate-100">+340%</span>
+          <div className="relative z-10 w-full max-w-sm bg-white p-8 border border-[var(--color-brand-line)] shadow-2xl">
+            <div className="flex justify-between items-center mb-6">
+              <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[var(--color-brand-muted)]">Organic Growth Rate</span>
+              <span className="text-xl font-sans font-extrabold text-[var(--color-brand-fg)]">+340%</span>
             </div>
-            <div className="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+            <div className="w-full bg-[var(--color-brand-bg)] h-3 overflow-hidden border border-[var(--color-brand-line)]">
               <motion.div 
                 initial={{ width: 0 }}
                 whileInView={{ width: '85%' }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.5, delay: 0.5 }}
-                className="bg-amber-500 h-full rounded-full"
+                className="bg-[var(--color-brand-accent)] h-full"
               />
             </div>
           </div>

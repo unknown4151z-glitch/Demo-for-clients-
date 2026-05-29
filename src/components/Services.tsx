@@ -1,80 +1,67 @@
 import { motion } from 'motion/react';
-import { BrainCircuit, Search, Code2, PenTool, Share2, Video, TrendingUp, MessageSquare } from 'lucide-react';
+import { Package, Smartphone, Laptop, Zap, Users, PenTool, Bike, Car, Shirt, ShoppingBasket } from 'lucide-react';
 
 const services = [
-  {
-    icon: Search,
-    title: 'Search Traffic Domination (SEO)',
-    desc: 'Local SEO, Programmatic semantic SEO, and conversational keyword optimization to rank #1 in India. Don\'t just rank, dominate.',
-    keywords: 'SEO services India, Local SEO, AI Search SEO'
-  },
-  {
-    icon: Code2,
-    title: 'Futuristic Website Development',
-    desc: 'High-converting, cinematic single-page portfolios and dynamic websites. Fast, mobile-first, and optimized for Core Web Vitals.',
-    keywords: 'premium website design company, WebGL website agency'
-  },
-  {
-    icon: BrainCircuit,
-    title: 'AI Marketing & Automation',
-    desc: 'Automate lead generation via WhatsApp and Instagram DMs using advanced AI conversational funnels that convert instantly.',
-    keywords: 'AI marketing agency, WhatsApp automation services'
-  },
-  {
-    icon: Share2,
-    title: 'Social Media Growth Systems',
-    desc: 'Psychologically optimized content that drives engagement and turns followers into loyal customers via Facebook & Instagram Ads.',
-    keywords: 'social media marketing agency, Meta Ads expert'
-  },
-  {
-    icon: PenTool,
-    title: 'Luxury Branding Strategy',
-    desc: 'Why premium branding increases trust? We create visually authoritative brand identities that command high-ticket pricing.',
-    keywords: 'luxury branding agency India, branding psychology'
-  },
-  {
-    icon: Video,
-    title: 'Cinematic Video Editing',
-    desc: 'Short-form reels and long-form YouTube content edited for maximizing watch time, audience retention, and viral reach.',
-    keywords: 'video editing services in India'
-  }
+  { icon: Shirt, title: 'Clothes', desc: 'Fashion Showroom', keywords: 'Fashion, Apparels', img: 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=2070&auto=format&fit=crop' },
+  { icon: ShoppingBasket, title: 'Grocery', desc: 'Fresh Essentials', keywords: 'Food, Daily', img: 'https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2074&auto=format&fit=crop' },
+  { icon: Zap, title: 'AC & Appliances', desc: 'Home Comfort Systems', keywords: 'Cooling, Home', img: 'https://images.unsplash.com/photo-1582192730841-2a622925d7c9?q=80&w=2070&auto=format&fit=crop' },
+  { icon: Smartphone, title: 'Mobiles', desc: 'Smartphones & Gadgets', keywords: 'Phones, Tech', img: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=2080&auto=format&fit=crop' },
+  { icon: Laptop, title: 'Laptops', desc: 'Pro Computing', keywords: 'Tech, Work', img: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?q=80&w=2071&auto=format&fit=crop' },
+  { icon: Package, title: 'PC & Gaming', desc: 'Custom Gaming Rigs', keywords: 'Gaming, PCs', img: 'https://images.unsplash.com/photo-1587202372572-882292f75e0c?q=80&w=2070&auto=format&fit=crop' },
+  { icon: Users, title: 'Coaching Classes', desc: 'Professional Education', keywords: 'Education, Skills', img: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop' },
+  { icon: PenTool, title: 'Brand/Web Agency', desc: 'Premium Digital Studio', keywords: 'Design, Marketing', img: 'https://images.unsplash.com/photo-1542744095-291d1f67b221?q=80&w=2070&auto=format&fit=crop' },
+  { icon: Bike, title: 'Cycle Showroom', desc: 'Mountain & Road Bikes', keywords: 'Fitness, Bikes', img: 'https://images.unsplash.com/photo-1507035895480-2b3156c31fc4?q=80&w=2070&auto=format&fit=crop' },
+  { icon: Car, title: 'Car Showroom', desc: 'Luxury Automobiles', keywords: 'Cars, Auto', img: 'https://images.unsplash.com/photo-1492144534655-ae79c963c9d4?q=80&w=2083&auto=format&fit=crop' },
 ];
 
 export function Services() {
   return (
-    <section id="services" className="py-24 bg-[#020617] relative">
+    <section id="services" className="py-24 bg-[var(--color-brand-bg)] relative">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-amber-500 font-bold tracking-widest uppercase text-[10px] mb-4">Core Capabilities</h2>
-          <h3 className="text-4xl md:text-5xl lg:text-6xl font-display font-black text-slate-100 mb-6 tracking-tight">
-            Next-Generation Digital Marketing
-          </h3>
-          <p className="text-slate-400 text-lg">
-            Traditional marketing is dead. We use conversational search optimization, psychological CTR manipulation, and AI tools to outsmart your competitors.
-          </p>
+        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+           <div className="max-w-2xl">
+             <div className="section-label mb-6">Our Portfolio</div>
+             <h3 className="text-4xl md:text-5xl lg:text-7xl font-sans font-extrabold uppercase text-[var(--color-brand-fg)] tracking-tighter leading-[0.95]">
+               Industries <span className="font-serif font-light italic lowercase text-5xl md:text-6xl lg:text-[80px]">we serve</span>
+             </h3>
+           </div>
+           <p className="text-[var(--color-brand-muted)] font-serif text-lg max-w-xs leading-relaxed">
+              We design premium, performance-oriented experiences for diverse industries.
+           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {services.map((service, index) => (
-            <motion.article 
+            <motion.a 
+              href="#"
               key={service.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-8 rounded-3xl bg-slate-900/40 border border-slate-800 hover:border-amber-500/50 hover:bg-slate-800/50 transition-colors group cursor-pointer flex flex-col justify-between"
+              transition={{ duration: 0.6, delay: index * 0.05 }}
+              className="relative overflow-hidden border border-[var(--color-brand-line)] bg-white transition-all hover:-translate-y-1 hover:shadow-lg group block"
             >
-              <div className="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center text-slate-300 mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
-                <service.icon size={24} />
+              <div className="h-40 relative overflow-hidden bg-[var(--color-brand-bg)]">
+                 <img src={service.img} alt={service.title} className="absolute inset-0 w-full h-full object-cover grayscale mix-blend-multiply opacity-60 group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" />
               </div>
-              <h4 className="text-xl font-bold font-display text-slate-100 mb-3">{service.title}</h4>
-              <p className="text-slate-400 text-sm mb-6 leading-relaxed flex-grow">
-                {service.desc}
-              </p>
-              <div className="text-[10px] text-slate-500 font-mono tracking-widest uppercase border-t border-slate-800/50 pt-3 mt-auto">
-                Keywords: {service.keywords}
+              <div className="p-6 flex flex-col justify-between h-[200px]">
+                <div>
+                   <div className="font-mono text-[9px] tracking-[0.2em] uppercase text-[var(--color-brand-muted)] mb-2">0{index + 1}</div>
+                   <h4 className="text-lg font-sans font-extrabold uppercase tracking-tight text-[var(--color-brand-fg)] mb-2">{service.title}</h4>
+                   <p className="font-serif text-sm leading-[1.5] text-[var(--color-brand-muted)]">
+                     {service.desc}
+                   </p>
+                </div>
+                <div className="flex justify-between items-center border-t border-[var(--color-brand-line)] pt-3 mt-4">
+                   <span className="font-mono text-[9px] uppercase tracking-widest text-[var(--color-brand-muted)] truncate">
+                     {service.keywords}
+                   </span>
+                   <span className="text-xs uppercase font-mono tracking-widest font-bold text-[var(--color-brand-fg)] group-hover:text-[var(--color-brand-accent)] transition-colors">
+                     View →
+                   </span>
+                </div>
               </div>
-            </motion.article>
+            </motion.a>
           ))}
         </div>
       </div>

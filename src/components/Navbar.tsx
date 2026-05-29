@@ -16,45 +16,45 @@ export function Navbar() {
 
   const navLinks = [
     { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
     { name: 'About', href: '#about' },
+    { name: 'Services', href: '#services' },
     { name: 'Portfolio', href: '#portfolio' },
   ];
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-slate-950/50 backdrop-blur-md border-b border-slate-800 py-4' : 'bg-transparent py-6'
+      className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${
+        isScrolled ? 'bg-white/90 backdrop-blur-md border-[var(--color-brand-line)] py-4' : 'bg-transparent border-transparent py-6 md:py-8'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <a href="#home" className="text-2xl font-display font-bold tracking-tighter flex items-center gap-2">
-          <span className="text-slate-100">DEMO</span>
-          <span className="text-amber-500">SITE</span>
+        <a href="#home" className="text-lg md:text-xl font-sans font-extrabold tracking-[0.25em] uppercase flex items-center gap-2">
+          <span className="text-[var(--color-brand-fg)]">AGENCY</span>
+          <span className="text-[var(--color-brand-accent)] font-normal italic font-serif -ml-1 lowercase text-2xl">showcase</span>
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
-          <ul className="flex items-center gap-8 text-sm font-medium text-slate-400">
+        <div className="hidden md:flex items-center gap-12 text-[11px] font-mono uppercase tracking-[0.15em]">
+          <ul className="flex items-center gap-10 text-[var(--color-brand-muted)]">
             {navLinks.map((link) => (
               <li key={link.name}>
-                <a href={link.href} className="hover:text-amber-500 transition-colors uppercase tracking-widest text-[11px] font-mono">
-                  #{link.name}
+                <a href={link.href} className="hover:text-[var(--color-brand-accent)] transition-colors">
+                  {link.name}
                 </a>
               </li>
             ))}
           </ul>
           <a
             href="#contact"
-            className="px-6 py-2.5 bg-amber-500 text-slate-950 font-bold rounded-full hover:bg-amber-600 transition-all text-sm shadow-[0_4px_15px_rgba(245,158,11,0.3)]"
+            className="flex items-center gap-2 hover:text-[var(--color-brand-accent)] transition-all font-bold text-[var(--color-brand-fg)]"
           >
-            GET AUDIT
+            Start Dominating →
           </a>
         </div>
 
         {/* Mobile Nav Toggle */}
         <button
-          className="md:hidden text-slate-100"
+          className="md:hidden text-[var(--color-brand-fg)]"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -66,17 +66,17 @@ export function Navbar() {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden absolute top-full left-0 w-full bg-slate-950/95 backdrop-blur-xl border-b border-slate-800 p-6 flex flex-col gap-6"
+          className="md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl border-b border-[var(--color-brand-line)] p-6 flex flex-col gap-6"
         >
-          <ul className="flex flex-col gap-6 text-lg font-medium text-slate-300">
+          <ul className="flex flex-col gap-6 font-mono text-sm uppercase tracking-widest text-[var(--color-brand-muted)]">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <a
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block hover:text-amber-500 transition-colors uppercase tracking-widest font-mono text-sm"
+                  className="block hover:text-[var(--color-brand-accent)] transition-colors"
                 >
-                  #{link.name}
+                  {link.name}
                 </a>
               </li>
             ))}
@@ -84,7 +84,7 @@ export function Navbar() {
           <a
             href="#contact"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-center px-6 py-3 bg-amber-500 text-slate-950 font-bold rounded-full shadow-[0_4px_15px_rgba(245,158,11,0.3)]"
+            className="text-center px-6 py-3 bg-[var(--color-brand-accent)] text-white text-xs uppercase tracking-widest font-bold font-mono"
           >
             Get Free Strategy Setup
           </a>
