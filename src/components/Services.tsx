@@ -19,11 +19,11 @@ export function Services() {
   return (
     <section id="services" className="py-24 bg-[var(--color-brand-bg)] relative">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-20 gap-6 md:gap-8">
            <div className="max-w-2xl">
              <div className="section-label mb-6">Our Portfolio</div>
-             <h3 className="text-4xl md:text-5xl lg:text-7xl font-sans font-extrabold uppercase text-[var(--color-brand-fg)] tracking-tighter leading-[0.95]">
-               Industries <span className="font-serif font-light italic lowercase text-5xl md:text-6xl lg:text-[80px]">we serve</span>
+             <h3 className="text-4xl sm:text-5xl lg:text-7xl font-sans font-extrabold uppercase text-[var(--color-brand-fg)] tracking-tighter leading-tight md:leading-[0.95]">
+               Industries <br className="block sm:hidden" /><span className="font-serif font-light italic lowercase text-5xl sm:text-6xl lg:text-[80px] text-[var(--color-brand-accent)] sm:text-[var(--color-brand-fg)]">we serve</span>
              </h3>
            </div>
            <p className="text-[var(--color-brand-muted)] font-serif text-lg max-w-xs leading-relaxed">
