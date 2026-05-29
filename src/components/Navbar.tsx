@@ -28,9 +28,11 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <a href="#home" className="text-lg md:text-xl font-sans font-extrabold tracking-[0.25em] uppercase flex items-center gap-2">
-          <span className="text-[var(--color-brand-fg)]">AGENCY</span>
-          <span className="text-[var(--color-brand-accent)] font-normal italic font-serif -ml-1 lowercase text-2xl">showcase</span>
+        <a href="#home" className="flex items-center">
+          <span className="text-2xl md:text-3xl font-sans font-black tracking-tight flex items-center gap-2">
+            <span className="text-[var(--color-brand-accent)] uppercase">ANSH</span>
+            <span className="text-[var(--color-brand-fg)] uppercase tracking-[0.15em] text-sm md:text-base mt-1.5 opacity-90">Growth Partner</span>
+          </span>
         </a>
 
         {/* Desktop Nav */}

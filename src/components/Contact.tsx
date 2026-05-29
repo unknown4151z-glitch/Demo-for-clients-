@@ -49,8 +49,13 @@ export function Contact() {
         </motion.div>
 
         <div className="mt-20 flex flex-col md:flex-row items-center justify-between pt-8 border-t border-[var(--color-brand-line)] font-mono uppercase tracking-[0.2em] text-[8px] sm:text-[10px] text-[var(--color-brand-muted)]">
-          <div className="font-sans font-bold text-sm text-[var(--color-brand-fg)] tracking-[0.25em]">DEMO<em className="text-[var(--color-brand-accent)] not-italic font-normal">SITE</em></div>
-          <p className="my-4 md:my-0">© {new Date().getFullYear()} DEMO SITE · MARKETING AGENCY</p>
+          <div className="flex items-center">
+             <span className="text-xl font-sans font-black tracking-tight flex items-center gap-2">
+               <span className="text-[var(--color-brand-accent)] uppercase">ANSH</span>
+               <span className="text-[var(--color-brand-fg)] uppercase tracking-[0.15em] text-xs mt-1 opacity-90">Growth Partner</span>
+             </span>
+          </div>
+          <p className="my-4 md:my-0">© {new Date().getFullYear()} ANSH GROWTH PARTNER · MARKETING AGENCY</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-[var(--color-brand-accent)] transition-colors line-through decoration-[var(--color-brand-accent)]">Instagram</a>
             <a href="#" className="hover:text-[var(--color-brand-accent)] transition-colors line-through decoration-[var(--color-brand-accent)]">LinkedIn</a>
