@@ -9,12 +9,6 @@ const catalog = [
   { id: 4, title: 'Elastic Band Kit', category: 'Accessories', img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop' },
 ];
 
-const pricing = [
-  { name: 'Startup', price: '₹4,999', features: ['Core sets', 'Basic setup', '1 Year Warranty'] },
-  { name: 'Premium Club', price: '₹14,999', features: ['Full cardio', 'Strength gear', '3 Year Warranty', 'Setup Assistance'] },
-  { name: 'Elite Commercial', price: '₹49,999', features: ['Full Gym Setup', 'Commercial grade gear', '5 Year Warranty', '24/7 Support', 'Custom Layout'] },
-];
-
 export function GymSection() {
   const [bmi, setBmi] = useState<number | null>(null);
 
@@ -39,8 +33,8 @@ export function GymSection() {
             </div>
         </div>
 
-        {/* Setup & Pricing */}
-        <div className="grid md:grid-cols-2 gap-16 mb-24">
+        {/* Setup */}
+        <div className="mb-24">
             <div className="bg-black text-white p-12">
                 <Target className="mb-6 w-10 h-10 text-[var(--color-brand-accent)]" />
                 <h3 className="text-3xl font-black mb-6">Corporate Gym Setups</h3>
@@ -48,23 +42,6 @@ export function GymSection() {
                 <div className="space-y-4">
                     {['Site Assessment', 'Custom Layout Planning', 'Expert Installation', 'Maintenance'].map(step => (
                         <div key={step} className="flex items-center gap-3"><Check className="w-4 h-4 text-[var(--color-brand-accent)]" /> {step}</div>
-                    ))}
-                </div>
-            </div>
-            <div>
-                <h3 className="text-2xl font-sans font-bold mb-8">Pricing Packages</h3>
-                <div className="grid gap-6">
-                    {pricing.map(plan => (
-                        <div key={plan.name} className="flex justify-between items-center bg-white p-6 border group hover:border-[var(--color-brand-accent)] transition-colors">
-                            <div>
-                                <h4 className="font-bold text-lg">{plan.name}</h4>
-                                <p className="text-xs text-zinc-500">{plan.features.slice(0,2).join(', ')}</p>
-                            </div>
-                            <div className="text-right">
-                                <p className="text-xl font-black">{plan.price}</p>
-                                <ChevronRight className="inline w-5 h-5 text-[var(--color-brand-accent)]" />
-                            </div>
-                        </div>
                     ))}
                 </div>
             </div>
