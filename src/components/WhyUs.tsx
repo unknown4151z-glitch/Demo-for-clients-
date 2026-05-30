@@ -24,7 +24,7 @@ export function WhyUs() {
             transition={{ delay: 0.1 }}
             className="text-lg font-serif text-[var(--color-brand-muted)] mb-12 leading-relaxed"
           >
-            Sahi strategy ke bina budget waste hota hai. At DEMO SITE, we focus on 
+            Sahi strategy ke bina budget waste hota hai. At Support Center, we focus on 
             <strong className="text-[var(--color-brand-fg)] font-semibold font-sans uppercase text-sm mx-2">AI-era search visibility</strong> and 
             <strong className="text-[var(--color-brand-fg)] font-semibold font-sans uppercase text-sm ml-1">social conversion funnels</strong>. We do not just build, we dominate.
           </motion.p>
